@@ -1,0 +1,94 @@
+.page-web a.icon i::before {
+  color: #000;
+}
+.page-web a.icon-menu {
+  position: fixed;
+  right: 3vh;
+  top: 3vh;
+  z-index: 10;
+}
+.page-web .wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  margin: 0;
+}
+.page-web .wrapper a.logo {
+  display: inline-block;
+  position: relative;
+  width: 15vw;
+  aspect-ratio: 1/1;
+}
+.page-web .wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.page-web .wrapper nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.page-web .wrapper main h4 {
+  display: block;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 10px 0;
+}
+.page-web .wrapper main .content-box {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 0 10%;
+}
+.page-web .wrapper main .content-box .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.page-web .wrapper main .content-box .content .img-box {
+  position: relative;
+  min-height: 45vh;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.page-web .wrapper main .content-box .content .img-box img {
+  object-fit: cover;
+}
+.page-web .wrapper main .content-box .content .info {
+  color: #000;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-web .wrapper main .content-box .content .info .appicon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.page-web .wrapper main .content-box .content .info .appicon img {
+  object-fit: cover;
+  object-position: center;
+}
+.page-web .wrapper main .content-box .content .info .detail {
+  width: calc(100% - 40px);
+}
+.page-web .wrapper main .content-box .content .info .detail .info-name {
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.page-web .wrapper main .content-box .content .info .detail .info-content {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #505050;
+}
