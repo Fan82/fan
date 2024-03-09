@@ -1,84 +1,180 @@
-.page-web
-    a
-        &.icon
-            i
-                &::before
-                    color: #000
-        &.icon-menu
-            position: fixed
-            right: 3vh
-            top: 3vh
-            z-index: 10
-    .wrapper
-        width: 100%
-        min-height: 100vh
-        padding: 10px
-        margin: 0
-        a.logo
-            display: inline-block
-            position: relative
-            width: 15vw
-            aspect-ratio: 1/1
-        img
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            object-fit: contain
-        nav
-            ul
-                display: flex
-                justify-content: flex-start
-                align-items: center
-        main
-            h4
-                display: block
-                font-size: 20px
-                font-weight: bolder
-                margin: 10px 0
-            .content-box
-                display: grid
-                grid-template-columns: 45% 45%
-                gap: 0 10%
-                .content
-                    display: flex
-                    flex-direction: column
-                    justify-content: flex-start
-                    .img-box
-                        position: relative
-                        min-height: 45vh
-                        width: 100%
-                        overflow: hidden
-                        border-radius: 10px
-                        img
-                            object-fit: cover
+$dark:      #222
+$light:     #fff
+$grey-1:    #f9f9f9
+$grey-2:    #888
+$main-bg:   #515151
+$main:      #2258ee
 
-                    .info
-                        color: #000
-                        margin-top: 10px
+.page-web
+    height: 100vh
+    overflow: hidden
+    background: $main-bg
+    header
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 60px
+        line-height: 60px
+        padding: 0 10px
+        display: flex
+        justify-content: space-between
+        align-items: center
+    .icon
+        i
+            color: $light
+            font-size: 20px
+    .wrapper
+        padding-top: 60px
+        nav
+            padding: 0 40px
+            ul
+                border-radius: 100px
+                background: $light
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-wrap: nowrap
+                overflow: hidden
+                padding: 3px
+                li
+                    width: calc( 100% / 3 )
+                    line-height: 40px
+                    text-align: center
+                    border-radius: 50px
+                    a
+                        color: $dark
+                        text-decoration: none
+                    &.active
+                        background: $main
+                        a
+                            color: $light
+                    &:hover
+                        background: rgba($main ,0.1 )
+    main
+        height: calc( 100vh - 60px )
+        background: $light
+        overflow-y: scroll
+        border-radius: 20px 20px 0 0
+        padding: 5px 10px
+        > a
+            color: $light
+            text-align: center
+            width: 100%
+            vertical-align: middle
+            line-height: 30px
+            &::before
+                content: ''
+                position: relative
+                display: inline-block
+                background: $light
+                border-radius: 100px
+                width: 12px
+                height: 12px
+        .input-box
+            position: relative
+            margin: 10px 0
+            display: flex
+            justify-content: center
+            align-items: center
+            background: $grey-1
+            border-radius: 10px
+            padding: 5px 10px
+            > a.icon
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                i
+                    color: $main
+            &.box-m
+                gap: 2%
+                justify-content: space-between
+                .input
+                    width: 48%
+                
+
+            &.input-flex
+                .input
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    span.s-title
+                        display: inline-block
+            .input
+                width: 100%
+                .s-title
+                    text-transform: capitalize
+                    color: $grey-2
+                    font-size: 15px
+                    line-height: 20px
+                    display: block
+                .txt
+                    font-size: 17px
+                    font-weight: 400
+                    line-height: 40px
+                    padding: 2px 0
+                
+                .passenger-content
+                    width: 50%
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    line-height: 50px
+                    .person
                         display: flex
                         justify-content: center
                         align-items: center
-                        .appicon
-                            position: relative
-                            width: 35px
-                            height: 35px
-                            overflow: hidden
-                            border-radius: 5px
-                            margin-right: 10px
-                            img
-                                object-fit: cover
-                                object-position: center
-                        .detail
-                            width: calc( 100% - 40px )
-                            .info-name
-                                margin: 5px 0
-                                font-weight: 600
-                                font-size: 14px
-                            .info-content
-                                width: 100%
-                                white-space: nowrap
-                                overflow: hidden
-                                text-overflow: ellipsis
-                                color: #505050
+                        .icon
+                            i
+                                color: $grey-2
+                                font-size: 18px
+                        .number
+                            font-weight: 700
+                            font-size: 20px
+                            margin-left: 5px
+                &.box-R
+                    text-align: right
+            &.class
+                .txt
+                    font-size: 20px
+                    font-weight: 600
+        button
+            width: 100%
+            background: $main
+            border-radius: 15px
+            line-height: 60px
+            color: $light
+            border: none
+            outline: none
+    footer
+        position: fixed
+        bottom: 0
+        left: 0
+        background: $light
+        width: 100%
+        border-radius: 20px 20px 0 0
+        box-shadow: 0 -5px 5px $grey-1
+        ul
+            margin: 0
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin: 5px 0
+            li
+                padding: 5px 10px
+                text-align: center
+                a.icon
+                    border-radius: 10px
+                    width: 100%
+                    height: 100%
+                    padding: 15px
+                    i
+                        font-size: 22px
+                        color: $grey-2
+                &:hover
+                    a.icon
+                        background: $main
+                        i
+                            color: $light

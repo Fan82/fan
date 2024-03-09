@@ -56,6 +56,11 @@ li {
   display: inline-block;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 button, input,
 optgroup, select,
 textarea {
