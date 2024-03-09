@@ -1,9 +1,9 @@
 $dark:      #222
 $light:     #fff
-$grey-1:    #f9f9f9
-$grey-2:    #888
+$grey-1:    #dddddd
 $main-bg:   #515151
 $main:      #2258ee
+$default:   #4d4d4d
 
 .page-web
     height: 100vh
@@ -77,8 +77,8 @@ $main:      #2258ee
             display: flex
             justify-content: center
             align-items: center
-            background: $grey-1
-            border-radius: 10px
+            background: rgba($grey-1 ,0.4 )
+            border-radius: 17px
             padding: 5px 10px
             > a.icon
                 position: absolute
@@ -105,7 +105,7 @@ $main:      #2258ee
                 width: 100%
                 .s-title
                     text-transform: capitalize
-                    color: $grey-2
+                    color: $default
                     font-size: 15px
                     line-height: 20px
                     display: block
@@ -127,7 +127,7 @@ $main:      #2258ee
                         align-items: center
                         .icon
                             i
-                                color: $grey-2
+                                color: $default
                                 font-size: 18px
                         .number
                             font-weight: 700
@@ -172,7 +172,7 @@ $main:      #2258ee
                     padding: 15px
                     i
                         font-size: 22px
-                        color: $grey-2
+                        color: $default
                 &:hover
                     a.icon
                         background: $main

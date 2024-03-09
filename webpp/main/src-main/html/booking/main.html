@@ -42,7 +42,7 @@
 
         <main>
             <div class="input-box box-L">
-                <div class="input">
+                <div class="input" data-toggle="modal" data-target="#locateModal">
                     <span class="s-title">
                         from
                     </span>
@@ -149,10 +149,50 @@
             </ul>
 
         </footer>
+        <!-- modal -->
+        <div class="modal modal-bottom fade show" id="locateModal" tabindex="-1" aria-labelledby="locateModalTitle"
+            aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="locateModalTitle">Select Dates</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-Btn">
+                            <input type="text" placeholder="Search">
+                            <a href="#" class="icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </a>
+                        </div>
+                        <div class="container-fluid bd-example-row">
+                            <div class="row">
+                                <div class="s-title">Asia</div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="../../../library/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
-    <script src="../../../library/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <!-- <script src="../../../library/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script> -->
+    <!-- <script src="../../../library/jquery-ui-1.13.2/jquery-ui.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

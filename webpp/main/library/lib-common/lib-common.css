@@ -1,7 +1,6 @@
 @charset "UTF-8";
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -48,8 +47,7 @@ ul, ol {
 }
 
 ul {
-  -webkit-padding-start: unset;
-          padding-inline-start: unset;
+  padding-inline-start: unset;
 }
 
 li {
@@ -69,15 +67,20 @@ textarea {
   font-size: 100%;
   line-height: 1.15;
 }
-
 button:invalid, input:invalid,
 optgroup:invalid, select:invalid,
 textarea:invalid {
+  -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 input:focus, textarea:focus, button:focus {
+  outline: none;
+}
+
+button {
+  border: none;
   outline: none;
 }
 
@@ -87,11 +90,9 @@ input:focus, textarea:focus, button:focus {
   margin: 0 0 10px 0;
   table-layout: fixed;
 }
-
 .div-tb .tr {
   display: table-row;
 }
-
 .div-tb .td {
   text-align: left;
   display: table-cell;
@@ -99,23 +100,18 @@ input:focus, textarea:focus, button:focus {
   padding: 0 1px 0 1px;
   line-height: normal;
 }
-
 .div-tb .td.ct {
   text-align: center;
 }
-
 .div-tb .td.rt {
   text-align: right;
 }
-
 .div-tb .td.vtop {
   vertical-align: top;
 }
-
 .div-tb .td.vmid {
   vertical-align: middle;
 }
-
 .div-tb .td.vbtm {
   vertical-align: bottom;
 }
@@ -382,13 +378,12 @@ input:focus, textarea:focus, button:focus {
   text-align: center;
   z-index: 100;
 }
-
 .demolink a {
-  color: #ffffff6b;
-  background: #0000002f;
+  color: rgba(255, 255, 255, 0.4196078431);
+  background: rgba(0, 0, 0, 0.1843137255);
   display: inline-block;
   margin-bottom: 5px;
-  border: 1px solid #ffffff6b;
+  border: 1px solid rgba(255, 255, 255, 0.4196078431);
   text-decoration: none;
   padding: 2px 5px;
   font-size: 12px;
@@ -402,4 +397,79 @@ input:focus, textarea:focus, button:focus {
 ul li {
   line-height: normal;
 }
-/*# sourceMappingURL=lib-common.css.map */
+
+.modal-bottom {
+  bottom: 0;
+  top: auto;
+}
+.modal-bottom .modal-dialog {
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+  height: 100vh;
+}
+.modal-bottom .modal-dialog .modal-content {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.modal-bottom .modal-header {
+  justify-content: center;
+}
+.modal-bottom .modal-header .btn-close {
+  position: absolute;
+  margin: 0;
+  right: 1rem;
+}
+.modal-bottom .modal-footer {
+  justify-content: center;
+}
+.modal-bottom .modal-footer button {
+  width: 100%;
+  background: #222;
+}
+.modal-bottom .s-title {
+  padding: 10px 0.15rem;
+  border-bottom: 1px solid #858585;
+  color: #858585;
+}
+.modal-bottom .row > div {
+  display: flex;
+  padding: 12px 0.15rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-bottom .row > div .locate {
+  color: #4d4d4d;
+}
+.modal-bottom .row > div .s-locate {
+  color: #858585;
+}
+.modal-bottom .search-Btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-shadow: inset 0 0 0 1px #dddddd;
+  border-radius: 10px;
+  line-height: 40px;
+  padding: 0 10px;
+}
+.modal-bottom .search-Btn::placeholder {
+  color: #858585;
+}
+.modal-bottom .search-Btn a.icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.modal-bottom .search-Btn a.icon i {
+  color: rgba(0, 0, 0, 0.315);
+}
+
+input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
