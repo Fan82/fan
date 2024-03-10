@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../../../library/fontawesome/css/fontawesome.min.css"> -->
     <link rel="stylesheet" href="../../../library/bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../library/jquery-ui-1.13.2/jquery-ui.min.css">
-    <!-- <link rel="stylesheet" href="../../../library/lib-common/css/base/reset.css"> -->
-    <link rel="stylesheet" href="../../../library/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../../../library/fontawesome/css/brands.css">
     <link rel="stylesheet" href="../../../library/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../../../library/lib-common/lib-common.css">
@@ -32,7 +31,7 @@
                     <a href="./main_oneWAY.html">One Way</a>
                 </li>
                 <li class="active">
-                    <a href="./main_oneWAY.html">Round Trip</a>
+                    <a href="./main.html">Round Trip</a>
                 </li>
                 <li>
                     <a href="./main_oneWAY.html">Multicity</a>
@@ -53,7 +52,7 @@
                 <a href="#" class="icon">
                     <i class="fa-solid fa-plane-departure"></i>
                 </a>
-                <div class="input box-R">
+                <div class="input box-R" data-toggle="modal" data-target="#locateModal">
                     <span class="s-title">
                         to
                     </span>
@@ -63,25 +62,25 @@
                 </div>
             </div>
             <div class="input-box box-m">
-                <div class="input">
+                <div class="input" data-toggle="modal" data-target="#dateModal">
                     <span class="s-title">
                         depart
                     </span>
                     <p class="txt date">
-                        Dec 23, 2024
+                        2024/03/01
                     </p>
                 </div>
-                <div class="input box-R">
+                <div class="input box-R" data-toggle="modal" data-target="#dateModal">
                     <span class="s-title">
                         return
                     </span>
                     <p class="txt date">
-                        Dec 23, 2024
+                        2024/03/05
                     </p>
                 </div>
             </div>
             <div class="input-box input-flex">
-                <div class="input">
+                <div class="input" data-toggle="modal" data-target="#passengerModal">
                     <span class="s-title">
                         passenger
                     </span>
@@ -108,7 +107,7 @@
                 </div>
             </div>
             <div class="input-box input-flex">
-                <div class="input">
+                <div class="input" data-toggle="modal" data-target="#classModal">
                     <span class="s-title">
                         class
                     </span>
@@ -120,9 +119,9 @@
             <a href="#" class="btn-s">
                 nonstop flights only
             </a>
-            <button>
-                Search
-            </button>
+            <a href="./booking.html" class="btn-primary search">
+                <button> Search </button>
+            </a>
         </main>
         <footer>
             <ul>
@@ -150,21 +149,21 @@
 
         </footer>
         <!-- modal -->
-        <div class="modal modal-bottom fade show" id="locateModal" tabindex="-1" aria-labelledby="locateModalTitle"
+        <div class="modal modal-bottom" id="locateModal" tabindex="-1" aria-labelledby="locateModalTitle"
             aria-modal="true" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="locateModalTitle">Select Dates</h1>
+                        <h1 class="modal-title fs-5" id="locateModalTitle">Select Location</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="search-Btn">
-                            <input type="text" placeholder="Search">
-                            <a href="#" class="icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                        </div>
+                    <div class="search-Btn">
+                        <input type="text" placeholder="Search city or airport">
+                        <a href="#" class="icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+                    <div class="modal-body modal-locate">
                         <div class="container-fluid bd-example-row">
                             <div class="row">
                                 <div class="s-title">Asia</div>
@@ -176,8 +175,346 @@
                                     <div class="locate">Seoul</div>
                                     <p class="s-locate">GMP</p>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
                             </div>
-
+                            <div class="row">
+                                <div class="s-title">Europe</div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Tokyo</div>
+                                    <p class="s-locate">HKD</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="locate">Seoul</div>
+                                    <p class="s-locate">GMP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-bottom" id="dateModal" tabindex="-1" aria-labelledby="locateModalTitle"
+            aria-modal="true" role="dialog">
+            <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="locateModalTitle">Select Dates</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#dateModal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body  modal-date">
+                        <div class="input-box box-m">
+                            <div class="input">
+                                <span class="s-title">
+                                    depart
+                                </span>
+                                <p class="txt date">
+                                    2024/03/01
+                                </p>
+                            </div>
+                            <div class="input box-R">
+                                <span class="s-title">
+                                    return
+                                </span>
+                                <p class="txt date">
+                                    2024/03/05
+                                </p>
+                            </div>
+                        </div>
+                        <div class="calendarContainer">
+                            <div class="monthYearTitleContainer">
+                                <a href="#" class="icon">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </a>
+                                <div class="monthWrap">
+                                    March 2024
+                                </div>
+                                <a href="#" class="icon">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="weekdayTitleContainer">
+                                <div class="weekWrap">Sun</div>
+                                <div class="weekWrap">Mon</div>
+                                <div class="weekWrap">Tue</div>
+                                <div class="weekWrap">Wed</div>
+                                <div class="weekWrap">Thr</div>
+                                <div class="weekWrap">Fri</div>
+                                <div class="weekWrap">Sat</div>
+                            </div>
+                            <div class="dayCellsContainer">
+                                <div class="cell blank">
+                                    <span class="dayNum"></span>
+                                </div>
+                                <div class="cell blank">
+                                    <span class="dayNum"></span>
+                                </div>
+                                <div class="cell blank">
+                                    <span class="dayNum"></span>
+                                </div>
+                                <div class="cell blank">
+                                    <span class="dayNum"></span>
+                                </div>
+                                <div class="cell blank">
+                                    <span class="dayNum"></span>
+                                </div>
+                                <div class="cell fri">
+                                    <span class="dayNum selected">1</span>
+                                </div>
+                                <div class="cell sat">
+                                    <span class="dayNum hover">2</span>
+                                </div>
+                                <div class="cell sun">
+                                    <span class="dayNum hover">3</span>
+                                </div>
+                                <div class="cell mon">
+                                    <span class="dayNum hover">4</span>
+                                </div>
+                                <div class="cell tue ">
+                                    <span class="dayNum selected">5</span>
+                                </div>
+                                <div class="cell wed">
+                                    <span class="dayNum">6</span>
+                                </div>
+                                <div class="cell thr">
+                                    <span class="dayNum">7</span>
+                                </div>
+                                <div class="cell fri">
+                                    <span class="dayNum">8</span>
+                                </div>
+                                <div class="cell sat">
+                                    <span class="dayNum">9</span>
+                                </div>
+                                <div class="cell sun">
+                                    <span class="dayNum">10</span>
+                                </div>
+                                <div class="cell mon">
+                                    <span class="dayNum">11</span>
+                                </div>
+                                <div class="cell tue">
+                                    <span class="dayNum">12</span>
+                                </div>
+                                <div class="cell wed">
+                                    <span class="dayNum">13</span>
+                                </div>
+                                <div class="cell thr">
+                                    <span class="dayNum">14</span>
+                                </div>
+                                <div class="cell fri">
+                                    <span class="dayNum">15</span>
+                                </div>
+                                <div class="cell sat">
+                                    <span class="dayNum">16</span>
+                                </div>
+                                <div class="cell sun">
+                                    <span class="dayNum">17</span>
+                                </div>
+                                <div class="cell mon">
+                                    <span class="dayNum">18</span>
+                                </div>
+                                <div class="cell tue">
+                                    <span class="dayNum">19</span>
+                                </div>
+                                <div class="cell wed">
+                                    <span class="dayNum">20</span>
+                                </div>
+                                <div class="cell thr">
+                                    <span class="dayNum">21</span>
+                                </div>
+                                <div class="cell fri">
+                                    <span class="dayNum">22</span>
+                                </div>
+                                <div class="cell sat">
+                                    <span class="dayNum">23</span>
+                                </div>
+                                <div class="cell sun">
+                                    <span class="dayNum">24</span>
+                                </div>
+                                <div class="cell mon">
+                                    <span class="dayNum">25</span>
+                                </div>
+                                <div class="cell tue">
+                                    <span class="dayNum">26</span>
+                                </div>
+                                <div class="cell wed">
+                                    <span class="dayNum">27</span>
+                                </div>
+                                <div class="cell thr">
+                                    <span class="dayNum">28</span>
+                                </div>
+                                <div class="cell fri">
+                                    <span class="dayNum">29</span>
+                                </div>
+                                <div class="cell sat">
+                                    <span class="dayNum">30</span>
+                                </div>
+                                <div class="cell sun">
+                                    <span class="dayNum">31</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-bottom" id="passengerModal" tabindex="-1" aria-labelledby="passengerModalTitle"
+            aria-modal="true" role="dialog">
+            <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="passengerModalTitle">Passenger</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body  modal-passenger">
+                        <div class="container-fluid bd-example-row">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="person">
+                                        <p>Adult</p>
+                                        <span>12+ years old at time of travel</span>
+                                    </div>
+                                    <div class="person">
+                                        <a href="#" class="icon">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </a>
+                                        <div class="number">0</div>
+                                        <a href="#" class="icon">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="person">
+                                        <p>Children</p>
+                                        <span>2–11 years at time of travel</span>
+                                    </div>
+                                    <div class="person">
+                                        <a href="#" class="icon">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </a>
+                                        <div class="number">0</div>
+                                        <a href="#" class="icon">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="person">
+                                        <p>Infants (Lap)</p>
+                                        <span>Under 2 years at time of travel</span>
+                                    </div>
+                                    <div class="person">
+                                        <a href="#" class="icon">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </a>
+                                        <div class="number">0</div>
+                                        <a href="#" class="icon">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-bottom" id="classModal" tabindex="-1" aria-labelledby="classModalTitle"
+            aria-modal="true" role="dialog">
+            <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="classModalTitle">Class</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body modal-class">
+                        <div class="container-fluid bd-example-row">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div>Economy</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>Premium Economy</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>Business</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>First</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -193,6 +530,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../../library/lib-common/js/script.js"></script>
+    <script src="../../../library/lib-common/js/claender.js"></script>
 </body>
 
 </html>

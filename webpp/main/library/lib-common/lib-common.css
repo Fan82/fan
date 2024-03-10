@@ -6,7 +6,6 @@
 }
 
 html {
-  font-size: -apple-system, "SF Pro TC", "PingFang TC", "Noto Sans TC", "微軟正黑體";
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -14,7 +13,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  font-size: -apple-system, "SF Pro TC", "PingFang TC", "Noto Sans TC", "微軟正黑體";
+  font-family: "calibri", "Roboto", "SF Pro TC", "PingFang TC", "Noto Sans TC", "微軟正黑體";
   line-height: normal;
 }
 
@@ -57,6 +56,10 @@ li {
 p {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 button, input,
@@ -401,12 +404,13 @@ ul li {
 .modal-bottom {
   bottom: 0;
   top: auto;
+  overflow: hidden;
+  transition: bottom 0.2s ease-in-out;
 }
 .modal-bottom .modal-dialog {
-  display: flex;
   align-items: flex-end;
+  display: flex;
   margin: 0;
-  height: 100vh;
 }
 .modal-bottom .modal-dialog .modal-content {
   border-bottom-right-radius: 0;
@@ -420,8 +424,84 @@ ul li {
   margin: 0;
   right: 1rem;
 }
-.modal-bottom .modal-footer {
+.modal-bottom .modal-content {
+  background-clip: border-box;
+}
+.modal-bottom .modal-body .input-box {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.modal-bottom .modal-body .input-box .s-title {
+  border: none;
+  padding: 0;
+}
+.modal-bottom .modal-body .person span {
+  color: #999;
+  font-size: 12px;
+}
+.modal-bottom .modal-body.modal-locate .s-title {
+  position: sticky;
+  background: #fff;
+  top: -20px;
+}
+.modal-bottom .modal-body.modal-passenger, .modal-bottom .modal-body.modal-class {
+  height: 100%;
+  min-height: 45vh;
+}
+.modal-bottom .modal-body.modal-passenger .row, .modal-bottom .modal-body.modal-class .row {
+  gap: 15px;
+}
+.modal-bottom .modal-body.modal-passenger .row .col-md-4, .modal-bottom .modal-body.modal-class .row .col-md-4 {
+  border-bottom: 0.5px solid #999;
+}
+.modal-bottom .modal-body.modal-passenger .row .col-md-4:last-of-type, .modal-bottom .modal-body.modal-class .row .col-md-4:last-of-type {
+  border: none;
+}
+.modal-bottom .modal-body.modal-passenger .person:last-of-type, .modal-bottom .modal-body.modal-class .person:last-of-type {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 0 18px;
+}
+.modal-bottom .modal-body.modal-passenger .person:last-of-type .number, .modal-bottom .modal-body.modal-class .person:last-of-type .number {
+  font-size: 28px;
+}
+.modal-bottom .modal-body.modal-passenger .person:last-of-type a.icon, .modal-bottom .modal-body.modal-class .person:last-of-type a.icon {
+  background: #222;
+  border-radius: 5px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+}
+.modal-bottom .modal-body.modal-passenger .person:last-of-type a.icon i, .modal-bottom .modal-body.modal-class .person:last-of-type a.icon i {
+  color: #fff;
+  font-size: 13px;
+}
+.modal-bottom .modal-body.modal-date {
+  min-height: 65vh;
+}
+.modal-bottom .modal-body.modal-date .input-box {
+  margin-bottom: 15px;
+}
+.modal-bottom .modal-body.modal-date .input-box .input .txt {
+  line-height: normal;
+}
+.modal-bottom .modal-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  width: 100%;
+  justify-content: center;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+  box-shadow: inset 0 -1px 0 #858585;
 }
 .modal-bottom .modal-footer button {
   width: 100%;
@@ -434,7 +514,7 @@ ul li {
 }
 .modal-bottom .row > div {
   display: flex;
-  padding: 12px 0.15rem;
+  padding: 12px 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -448,17 +528,22 @@ ul li {
   position: relative;
   display: block;
   width: 100%;
-  box-shadow: inset 0 0 0 1px #dddddd;
-  border-radius: 10px;
-  line-height: 40px;
-  padding: 0 10px;
+  padding: 5px 10px 0 10px;
 }
 .modal-bottom .search-Btn::placeholder {
   color: #858585;
 }
+.modal-bottom .search-Btn input {
+  height: 45px;
+  width: 100%;
+  box-shadow: inset 0 0 0 1px #dddddd;
+  background: #fff;
+  border-radius: 10px;
+  padding-left: 1rem;
+}
 .modal-bottom .search-Btn a.icon {
   position: absolute;
-  right: 10px;
+  right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -472,4 +557,76 @@ input {
   width: 100%;
   height: 100%;
   background: transparent;
+}
+
+.calendarContainer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+.calendarContainer .monthYearTitleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.calendarContainer .monthYearTitleContainer > a.icon {
+  position: absolute;
+  right: 0;
+}
+.calendarContainer .monthYearTitleContainer > a.icon:first-child {
+  left: 0;
+  right: auto;
+}
+.calendarContainer .monthYearTitleContainer .monthWrap {
+  display: inline-block;
+  text-align: center;
+  color: #222;
+  font-size: 18px;
+  line-height: 25px;
+}
+.calendarContainer .monthYearTitleContainer a.icon i {
+  color: #ff3b30;
+  font-size: 15px;
+}
+.calendarContainer .weekdayTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: rgba(77, 77, 77, 0.582);
+  margin: 5px 0;
+}
+.calendarContainer .weekdayTitleContainer > div {
+  display: inline-block;
+  width: 14.2857142857%;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
+.calendarContainer .dayCellsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.calendarContainer .dayCellsContainer .cell {
+  position: relative;
+  width: 14.2857142857%;
+  text-align: center;
+}
+.calendarContainer .dayCellsContainer .cell span {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50px;
+}
+.calendarContainer .dayCellsContainer .cell span.hover {
+  background: rgba(255, 59, 48, 0.2);
+}
+.calendarContainer .dayCellsContainer .cell span.selected {
+  background: #ff3b30;
+  color: #fff;
 }
