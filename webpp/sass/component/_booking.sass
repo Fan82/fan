@@ -1,0 +1,58 @@
+.select-date-header
+    .locate
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        color: $light
+        width: 100%
+        a.icon
+            position: relative
+            width: 30%
+            text-align: center
+            i
+                line-height: 30px
+            i.fa-chevron-right
+                position: absolute
+                right: 0
+                font-size: 12px
+            &::before
+                content: ''
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: 0
+                width: 100%
+                border: 0.5px dashed $light
+
+    ul.date
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow-x: auto
+        overflow-y: hidden
+        gap: 10px
+        li
+            border-radius: 5px
+            min-width: 28%
+            color: $grey-1
+            background: rgba($grey-1 , 0.1 )
+            text-align: center
+            gap: 5px
+            padding: 10px
+            margin-bottom: 5px
+            .s-title
+                color: $light
+                text-transform: uppercase
+                font-size: 20px
+                display: inline-block
+                margin: 5px 8px
+            .weekWrap
+                display: inline-block
+
+            .prise
+                line-height: 30px
+                font-weight: 600
+                font-size: 20px
+                white-space: nowrap
+                .currency
+                    font-size: 12px
