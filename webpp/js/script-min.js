@@ -1,0 +1,1 @@
+$(document).ready((function(){$("a.contact").click((function(){$(".contact-menu").css("display","flex")}))}));

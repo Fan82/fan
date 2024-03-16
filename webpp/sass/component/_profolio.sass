@@ -1,0 +1,104 @@
+body.main
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+    .header_nav
+        position: fixed
+        width: 100%
+        top: 0
+        left: 0
+        display: flex
+        justify-content: flex-start
+        padding: 0 20px
+        height: 60px
+        gap: 0 40px
+        > a
+            position: relative
+            height: 60px
+            aspect-ratio: 1/1
+            img
+                position: absolute
+                width: 100%
+                height: 100%
+                object-fit: contain
+        nav
+            padding: 10px 0
+            width: 100%
+            display: inline-flex
+            align-items: center
+            justify-content: space-between
+            .menu
+                display: flex
+                justify-content: center
+                align-items: center
+                background: #eee
+                border-radius: 50px
+                padding: 3px
+                height: 100%
+                width: 20%
+                &:has(.contact)
+                    width: 200px
+                a
+                    padding: 5px 10px
+                    width: 50%
+                    height: 100%
+                    text-align: center
+                    border-radius: 50px
+                    color: #666
+                    text-transform: uppercase
+                    line-height: 25px
+                    transition: 0.2s ease-in-out
+                    &:hover,
+                    &:focus
+                        background: #fff
+                    &.contact
+                        position: relative
+                        width: 100%
+                .contact-menu
+                    position: absolute
+                    top: 60px
+                    width: auto
+                    display: none
+                    justify-content: center
+                    align-items: center
+                    gap: 0 20px
+                    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+                    &.show
+                        display: flex
+                    li
+                        width: 40px
+                        height: 40px
+                        background: #eee
+                        line-height: 40px
+                        border-radius: 100px
+                        text-align: center
+                        a
+                            width: 100%
+                            height: 100%
+                            padding: 0
+                            border-radius: 100px
+                            line-height: 50px
+                            font-size: 23px
+                            ion-icon
+                                color: #666
+    main
+        margin-top: 60px
+        height: calc( 100vh - 60px )
+        > img
+            width: fit-content
+            height: fit-content
+            object-position: -120px -120px
+            object-fit: cover
+            filter: blur(5px)
+            z-index: 0
+        h2
+            position: absolute
+            top: 40%
+            left: 50px
+            transform: translateY(-50%)
+            font-size: 15rem
+            font-weight: bold
+            mix-blend-mode: difference
+            z-index: 1
+            &:last-of-type
+                top: calc( 40% + 15rem )
