@@ -81,6 +81,7 @@ body.main
                             font-size: 23px
                             ion-icon
                                 color: #666
+
     main
         margin-top: 60px
         height: calc( 100vh - 60px )
@@ -107,7 +108,7 @@ body.main-about
     main
         display: flex
         justify-content: space-between
-        align-items: center
+        padding: 10px
         .main-left
             width: calc( 100vw - 60% )
             height: 100%
@@ -121,14 +122,39 @@ body.main-about
                 object-fit: contain
         .main-right
             width: calc( 100vw - 40% )
+            height: 100%
             display: flex
             justify-content: space-between
             align-items: center
             flex-wrap: wrap
-            gap: 10px 5px
+            gap: 5px 0
             .main-box
-                background: #999
+                width: 100%
+                background: #99999931
+                height: calc( 100% / 3 )
+                padding: 10px
                 &:first-child
-                    width: 55%
+                    width: 54%
+                    h3
+                        font-size: 3.5rem
+                        font-weight: 900
+                        display: inline-block
+                    .secdond-title
+                        font-size: 2rem
+                    p
+                        display: inline-block
+                        font-size: 35px
+                        margin-left: 20px
+
                 &:nth-of-type(2)
-                    width: 40%
+                    width: 44%
+                .tltle
+                    display: block
+                    width: 100%
+                    font-size: 30px
+                    text-transform: capitalize
+                .progress
+                    position: relative
+                    background: #fff
+                    .progress-bar
+                        background: #888

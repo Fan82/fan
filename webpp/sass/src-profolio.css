@@ -128,7 +128,7 @@ body.main main h2:last-of-type {
 body.main-about main {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 10px;
 }
 body.main-about main .main-left {
   width: calc(100vw - 60%);
@@ -145,18 +145,48 @@ body.main-about main .main-left img {
 }
 body.main-about main .main-right {
   width: calc(100vw - 40%);
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px 5px;
+  gap: 5px 0;
 }
 body.main-about main .main-right .main-box {
-  background: #999;
+  width: 100%;
+  background: rgba(153, 153, 153, 0.1921568627);
+  height: 33.3333333333%;
+  padding: 10px;
 }
 body.main-about main .main-right .main-box:first-child {
-  width: 55%;
+  width: 54%;
+}
+body.main-about main .main-right .main-box:first-child h3 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  display: inline-block;
+}
+body.main-about main .main-right .main-box:first-child .secdond-title {
+  font-size: 2rem;
+}
+body.main-about main .main-right .main-box:first-child p {
+  display: inline-block;
+  font-size: 35px;
+  margin-left: 20px;
 }
 body.main-about main .main-right .main-box:nth-of-type(2) {
-  width: 40%;
+  width: 44%;
+}
+body.main-about main .main-right .main-box .tltle {
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+body.main-about main .main-right .main-box .progress {
+  position: relative;
+  background: #fff;
+}
+body.main-about main .main-right .main-box .progress .progress-bar {
+  background: #888;
 }
