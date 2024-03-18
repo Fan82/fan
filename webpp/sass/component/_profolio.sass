@@ -102,3 +102,33 @@ body.main
             z-index: 1
             &:last-of-type
                 top: calc( 40% + 15rem )
+// ============================================
+body.main-about
+    main
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .main-left
+            width: calc( 100vw - 60% )
+            height: 100%
+            position: relative
+            img
+                position: absolute
+                top: -10%
+                left: -120%
+                width: 250%
+                height: 250%
+                object-fit: contain
+        .main-right
+            width: calc( 100vw - 40% )
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-wrap: wrap
+            gap: 10px 5px
+            .main-box
+                background: #999
+                &:first-child
+                    width: 55%
+                &:nth-of-type(2)
+                    width: 40%
