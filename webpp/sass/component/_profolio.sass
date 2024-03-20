@@ -110,18 +110,18 @@ body.main-about
         justify-content: space-between
         padding: 10px
         .main-left
-            width: calc( 100vw - 60% )
+            width: calc( 100vw - 70% )
             height: 100%
             position: relative
             img
                 position: absolute
                 top: -10%
-                left: -120%
+                left: -150%
                 width: 250%
                 height: 250%
                 object-fit: contain
         .main-right
-            width: calc( 100vw - 40% )
+            width: calc( 100vw - 30% )
             height: 100%
             display: flex
             justify-content: space-between
@@ -130,31 +130,231 @@ body.main-about
             gap: 5px 0
             .main-box
                 width: 100%
-                background: #99999931
                 height: calc( 100% / 3 )
                 padding: 10px
                 &:first-child
-                    width: 54%
+                    width: 48%
                     h3
-                        font-size: 3.5rem
+                        font-size: 3rem
                         font-weight: 900
                         display: inline-block
                     .secdond-title
-                        font-size: 2rem
+                        font-size: 1.6rem
                     p
                         display: inline-block
-                        font-size: 35px
-                        margin-left: 20px
+                        font-size: 27px
 
                 &:nth-of-type(2)
-                    width: 44%
+                    width: 50%
                 .tltle
                     display: block
                     width: 100%
                     font-size: 30px
                     text-transform: capitalize
+                .progress-title
+                    margin: 5px 0
+                    text-transform: uppercase
+                    position: relative
+                .row
+                    justify-content: center
+                    align-items: center
                 .progress
                     position: relative
-                    background: #fff
+                    width: 100px
+                    height: 100px
+                    line-height: 100px
+                    background: none
+                    margin: 0 20px
+                    box-shadow: none
+                    &:after
+                        content: ""
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        border-radius: 50%
+                        border: 7px solid #eee
+
+                    > span
+                        position: absolute
+                        top: 0
+                        width: 50%
+                        height: 100%
+                        overflow: hidden
+                        z-index: 1
+
                     .progress-bar
-                        background: #888
+                        width: 100%
+                        height: 100%
+                        background: none
+                        border-width: 7px
+                        border-style: solid
+                        position: absolute
+                        top: 0
+                        border-color: #ffb43e
+
+                    .progress-left
+                        left: 0
+                        .progress-bar
+                            left: 100%
+                            border-top-right-radius: 50px
+                            border-bottom-right-radius: 50px
+                            border-left: 0
+                            transform-origin: center left
+
+                    .progress-right
+                        right: 0
+                        .progress-bar
+                            left: -100%
+                            border-top-left-radius: 50px
+                            border-bottom-left-radius: 50px
+                            border-right: 0
+                            transform-origin: center right
+
+                    .progress-value
+                        display: flex
+                        border-radius: 50%
+                        font-size: 20px
+                        text-align: center
+                        line-height: 20px
+                        align-items: center
+                        justify-content: center
+                        height: 100%
+                        font-weight: 300
+                        div
+                            margin-top: 10px
+
+                        span
+                            font-size: 12px
+                            text-transform: uppercase
+
+                    &[data-percentage="60"]
+                        .progress-right
+                            .progress-bar
+                                animation: loading-5 1.5s linear forwards
+                        .progress-left
+                            .progress-bar
+                                animation: loading-1 1.5s linear forwards 1.5s
+                    &[data-percentage="70"]
+                        .progress-right
+                            .progress-bar
+                                animation: loading-5 1.5s linear forwards
+                        .progress-left
+                            .progress-bar
+                                animation: loading-2 1.5s linear forwards 1.5s
+                    &[data-percentage="80"]
+                        .progress-right
+                            .progress-bar
+                                animation: loading-5 1.5s linear forwards
+                        .progress-left
+                            .progress-bar
+                                animation: loading-3 1.5s linear forwards 1.5s
+                    &[data-percentage="85"]
+                        .progress-right
+                            .progress-bar
+                                animation: loading-5 1.5s linear forwards
+                        .progress-left
+                            .progress-bar
+                                animation: loading-4 1.5s linear forwards 1.5s
+                .tool-list
+                    .badge
+                        display: inline-block
+                        width: 30px
+                        height: 30px
+                        &.vscode
+                            background: url("../library/img-common/img-main/icon/vscode.png") center no-repeat
+                            background-size: contain
+                .job-list
+                    display: flex
+                    justify-content: space-between
+                    margin-top: 30px
+                    li
+                        width: 20%
+                        &.over2
+                            width: 30%
+                        &:first-child
+                            .time
+                                justify-content: space-between
+
+                        .time
+                            position: relative
+                            width: 100%
+                            display: flex
+                            align-items: center
+                            justify-content: flex-end
+                            font-size: 18px
+                            &::before
+                                content: ''
+                                position: absolute
+                                bottom: -1.5px
+                                left: 50%
+                                transform: translateX(-50%)
+                                width: 80%
+                                border-bottom: 2px solid #535353
+                            &::after
+                                content: ''
+                                position: absolute
+                                bottom: -1.5px
+                                right: -12%
+                                width: 20%
+                                border-bottom: 2px dashed #535353
+
+                            p
+                                padding: 0 10px
+                                display: inline-block
+                        .job
+                            margin-top: 10px
+                            width: 100%
+                            display: flex
+                            flex-direction: column
+                            align-items: center
+                            justify-content: center
+                            font-size: 20px
+                            white-space: nowrap
+                            .company
+                                font-size: 14px
+@keyframes loading-1
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+    100%
+        -webkit-transform: rotate(36)
+        transform: rotate(36deg)
+
+@keyframes loading-2
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+    100%
+        -webkit-transform: rotate(72)
+        transform: rotate(72deg)
+
+@keyframes loading-3
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+    100%
+        -webkit-transform: rotate(108)
+        transform: rotate(108deg)
+
+@keyframes loading-4
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+    100%
+        -webkit-transform: rotate(130)
+        transform: rotate(130deg)
+
+@keyframes loading-5
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+    100%
+        -webkit-transform: rotate(180)
+        transform: rotate(180deg)

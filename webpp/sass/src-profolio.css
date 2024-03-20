@@ -131,20 +131,20 @@ body.main-about main {
   padding: 10px;
 }
 body.main-about main .main-left {
-  width: calc(100vw - 60%);
+  width: calc(100vw - 70%);
   height: 100%;
   position: relative;
 }
 body.main-about main .main-left img {
   position: absolute;
   top: -10%;
-  left: -120%;
+  left: -150%;
   width: 250%;
   height: 250%;
   object-fit: contain;
 }
 body.main-about main .main-right {
-  width: calc(100vw - 40%);
+  width: calc(100vw - 30%);
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -154,28 +154,26 @@ body.main-about main .main-right {
 }
 body.main-about main .main-right .main-box {
   width: 100%;
-  background: rgba(153, 153, 153, 0.1921568627);
   height: 33.3333333333%;
   padding: 10px;
 }
 body.main-about main .main-right .main-box:first-child {
-  width: 54%;
+  width: 48%;
 }
 body.main-about main .main-right .main-box:first-child h3 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
   display: inline-block;
 }
 body.main-about main .main-right .main-box:first-child .secdond-title {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 body.main-about main .main-right .main-box:first-child p {
   display: inline-block;
-  font-size: 35px;
-  margin-left: 20px;
+  font-size: 27px;
 }
 body.main-about main .main-right .main-box:nth-of-type(2) {
-  width: 44%;
+  width: 50%;
 }
 body.main-about main .main-right .main-box .tltle {
   display: block;
@@ -183,10 +181,227 @@ body.main-about main .main-right .main-box .tltle {
   font-size: 30px;
   text-transform: capitalize;
 }
+body.main-about main .main-right .main-box .progress-title {
+  margin: 5px 0;
+  text-transform: uppercase;
+  position: relative;
+}
+body.main-about main .main-right .main-box .row {
+  justify-content: center;
+  align-items: center;
+}
 body.main-about main .main-right .main-box .progress {
   position: relative;
-  background: #fff;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background: none;
+  margin: 0 20px;
+  box-shadow: none;
+}
+body.main-about main .main-right .main-box .progress:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 7px solid #eee;
+}
+body.main-about main .main-right .main-box .progress > span {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 body.main-about main .main-right .main-box .progress .progress-bar {
-  background: #888;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 7px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+  border-color: #ffb43e;
+}
+body.main-about main .main-right .main-box .progress .progress-left {
+  left: 0;
+}
+body.main-about main .main-right .main-box .progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-left: 0;
+  transform-origin: center left;
+}
+body.main-about main .main-right .main-box .progress .progress-right {
+  right: 0;
+}
+body.main-about main .main-right .main-box .progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 0;
+  transform-origin: center right;
+}
+body.main-about main .main-right .main-box .progress .progress-value {
+  display: flex;
+  border-radius: 50%;
+  font-size: 20px;
+  text-align: center;
+  line-height: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: 300;
+}
+body.main-about main .main-right .main-box .progress .progress-value div {
+  margin-top: 10px;
+}
+body.main-about main .main-right .main-box .progress .progress-value span {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="60"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="60"] .progress-left .progress-bar {
+  animation: loading-1 1.5s linear forwards 1.5s;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="70"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="70"] .progress-left .progress-bar {
+  animation: loading-2 1.5s linear forwards 1.5s;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="80"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="80"] .progress-left .progress-bar {
+  animation: loading-3 1.5s linear forwards 1.5s;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="85"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+body.main-about main .main-right .main-box .progress[data-percentage="85"] .progress-left .progress-bar {
+  animation: loading-4 1.5s linear forwards 1.5s;
+}
+body.main-about main .main-right .main-box .tool-list .badge {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+body.main-about main .main-right .main-box .tool-list .badge.vscode {
+  background: url("../library/img-common/img-main/icon/vscode.png") center no-repeat;
+  background-size: contain;
+}
+body.main-about main .main-right .main-box .job-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+body.main-about main .main-right .main-box .job-list li {
+  width: 20%;
+}
+body.main-about main .main-right .main-box .job-list li.over2 {
+  width: 30%;
+}
+body.main-about main .main-right .main-box .job-list li:first-child .time {
+  justify-content: space-between;
+}
+body.main-about main .main-right .main-box .job-list li .time {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 18px;
+}
+body.main-about main .main-right .main-box .job-list li .time::before {
+  content: "";
+  position: absolute;
+  bottom: -1.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  border-bottom: 2px solid #535353;
+}
+body.main-about main .main-right .main-box .job-list li .time::after {
+  content: "";
+  position: absolute;
+  bottom: -1.5px;
+  right: -12%;
+  width: 20%;
+  border-bottom: 2px dashed #535353;
+}
+body.main-about main .main-right .main-box .job-list li .time p {
+  padding: 0 10px;
+  display: inline-block;
+}
+body.main-about main .main-right .main-box .job-list li .job {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  white-space: nowrap;
+}
+body.main-about main .main-right .main-box .job-list li .job .company {
+  font-size: 14px;
+}
+
+@keyframes loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(36);
+    transform: rotate(36deg);
+  }
+}
+@keyframes loading-2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(72);
+    transform: rotate(72deg);
+  }
+}
+@keyframes loading-3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(108);
+    transform: rotate(108deg);
+  }
+}
+@keyframes loading-4 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(130);
+    transform: rotate(130deg);
+  }
+}
+@keyframes loading-5 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180);
+    transform: rotate(180deg);
+  }
 }
